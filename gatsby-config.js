@@ -1,7 +1,9 @@
+const path = require("path")
+
 module.exports = {
   siteMetadata: {
-    title: `Preemince Solution Limited`,
-    description: `description here`,
+    title: `Preeminence Solution Limited`,
+    description: ``,
     author: `@africansinatra`,
   },
   plugins: [
@@ -18,12 +20,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Preeminence Solution Limited`,
+        short_name: `PSL`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
@@ -33,6 +35,13 @@ module.exports = {
       options: {
         minify: true,
         ssr: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-root-import",
+      options: {
+        src: path.join(__dirname, "src"),
+        components: path.join(__dirname, "src/components"),
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
